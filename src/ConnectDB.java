@@ -5,6 +5,9 @@ import java.sql.SQLException;
 import java.sql.Statement; 
 
 
+//Justin Weagly test commit to file 
+// hollie 
+
 public class ConnectDB {
     
     public static void main(String[] args) {
