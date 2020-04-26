@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement; 
 
 
-//Justin Weagly test commit to file 
+//Justin Weagly test commit to file. Trying to do something. 
 // hollie 
 
 public class ConnectDB {
