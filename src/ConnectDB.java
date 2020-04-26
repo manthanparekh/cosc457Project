@@ -9,9 +9,17 @@ import java.sql.Statement;
 // hollie 
 //Melissa was here
 
-public class ConnectDB {
+public class ConnectDB {  //This main class will oversee the entire program? -Justin
     
-    public static void main(String[] args) {
+    public static void main(String[] args) { //This is the main method, 
+        //to keep the program organized, this method should only contains calls to void methods that don't take paremeters. 
+    CustomerTest(); //Calls the original test method. 
+    
+    }
+    
+    public static void CustomerTest() { //This was orginally the main method and tested connections by printing customer names.
+        //It has been moved to this method for organizational purposes. 
+        
         try{
             Class.forName("com.mysql.jdbc.Driver"); 
           
@@ -41,6 +49,7 @@ public class ConnectDB {
         }
         
         
+    
     }
      
         
