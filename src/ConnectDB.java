@@ -1,37 +1,44 @@
 import java.sql.Connection; 
 import java.sql.DriverManager;
-//import java.sql.PreparedStatement;
+import java.sql.ResultSet; 
 import java.sql.SQLException;
+import java.sql.Statement; 
 
 
 public class ConnectDB {
-    //DB Connection variables
     
-    static Connection connection = null; 
-    static String databaseName = "emclau5db"; 
-    static String url = "jdbc:mysql://localhost:3360/" +databaseName; 
-    
-    static String username = "emclau5d";       //username of MySQL Workbench
-    static String password = "Cosc*r7e8";     //password of MySQL Workbench
-    
-    
-    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
-     
-        Class.forName("com.mysql.jdbc.Driver").newInstance();
-        connection = DriverManager.getConnection(url,username,password); 
-        
-        
-        // THE CODE BELOW IS TO TEST WHETHER A RECORD CAN BE INSERTED ONCE CONNECTION IS ESTABLISHED.
-        /*PreparedStatement ps = connection.prepareStatement("INSERT INTO . . . "); 
-        int status = ps.executeUpdate();   //This method always returns in integer value of the execution is successful
-        
-        if (status != 0) {
-            System.out.println("Database was conneted");
-            System.out.println("Record was inserted!");            
-            
+    public static void main(String[] args) {
+        try{
+            Class.forName("com.mysql.jdbc.Driver"); 
+          
+        } catch (ClassNotFoundException e) {
+            System.out.println(e);
         }
-        */
+        
+        final String ID = "emclau5"; 
+        final String PW = "Cosc*r7e8"; 
+        final String SERVER = "jdbc:mysql://triton.towson.edu:3360/"+ID+"db"; 
+       
+        
+        try{
+            Connection con = DriverManager.getConnection(SERVER,ID,PW); 
+            Statement stmt = con.createStatement(); 
+            
+            ResultSet rs = stmt.executeQuery("Select * from Customers");
+            
+            while (rs.next()) {
+                String Fname = rs.getString("FName"); 
+                String Lname = rs.getString("LName"); 
+                System.out.println(Fname + "," + Lname);
+            }
+            
+        }catch(SQLException e) {
+            System.err.println(e);
+        }
+        
         
     }
+     
+        
     
 }
