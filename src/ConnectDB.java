@@ -13,8 +13,10 @@ public class ConnectDB {  //This main class will oversee the entire program? -Ju
     
     public static void main(String[] args) { //This is the main method, 
         //to keep the program organized, this method should only contains calls to void methods that don't take paremeters. 
-        //Doing this allows us to try out different code blocks easily by commenting out all calls but the one being tested
+        //Doing this allows us to try out different code blocks easily by commenting out all calls but the one being tested.
+        
     CustomerTest(); //Calls the original test method. 
+    //JustinTest(); //Calls Justin's temporary test method. This method seems to cause the program to run forever. 
     
     }
     
@@ -52,7 +54,14 @@ public class ConnectDB {  //This main class will oversee the entire program? -Ju
         
     
     }
-     
+    
+    public static void JustinTest() { //A test method made by Justin on April 26
         
+    GuiTestJustin testJ = new GuiTestJustin(); //creates an object from the test class to run a method from it
+    testJ.show_user(); //runs the "main" method from the gui test file. 
+    
+}
+     
+       
     
 }
