@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement; 
 
-
+import Login.Home;
 //Justin Weagly test commit to file. Trying to do something. Can you see this but not the gui. The red went away
 // hollie 
 //Melissa was here
@@ -14,8 +14,8 @@ public class ConnectDB {  //This main class will oversee the entire program? -Ju
     public static void main(String[] args) { //This is the main method, 
         //to keep the program organized, this method should only contains calls to void methods that don't take paremeters. 
         //Doing this allows us to try out different code blocks easily by commenting out all calls but the one being tested.
-        
-    CustomerTest(); //Calls the original test method. 
+     Home.main(args);
+    //CustomerTest(); //Calls the original test method. 
     //JustinTest(); //Calls Justin's temporary test method. This method seems to cause the program to run forever. 
     
     }
